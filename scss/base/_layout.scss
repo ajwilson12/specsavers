@@ -1,0 +1,72 @@
+@use "abstracts" as *;
+
+html {
+  margin: 0 !important;
+}
+
+body {
+  font-family: $primary-font;
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+.banner {
+  background-color: $dark-green;
+  width: $banner-width;
+  height: $banner-height;
+  overflow: hidden;
+}
+
+.content {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  isolation: isolate;
+}
+
+.gradient {
+  transform: translateY(-14px);
+  opacity: 0;
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  background: radial-gradient(
+    circle,
+    $brand-secondary -50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+
+.scene-two {
+  .gradient {
+    animation: backgroundGlow 5s 4s forwards;
+  }
+}
+
+@keyframes backgroundGlow {
+  0% {
+    opacity: 0;
+    scale: 0;
+}
+
+50% {
+    opacity: 0.8;
+    scale: 1;
+}
+
+100% {
+    opacity: 0;
+    scale: 1.5;
+  }
+}

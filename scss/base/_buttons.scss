@@ -1,0 +1,11 @@
+@use "abstracts" as *;
+
+.cta {
+    color: $brand-primary;
+    background-color: $brand-secondary;
+    padding: 10px;
+    border-radius: 200px;
+    font-size: 9.9px;
+    font-weight: 700;
+    line-height: 0.8;
+}
